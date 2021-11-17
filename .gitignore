@@ -25,4 +25,4 @@ yarn-error.log*
 
 #sonarqube
 .scanerwork
-.properties
+sonar-project.properties
