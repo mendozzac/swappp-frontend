@@ -1,0 +1,19 @@
+.swimmer-card {
+  list-style: none;
+  font-size: 21px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 20px;
+  &_element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+img {
+  border-radius: 50%;
+}
