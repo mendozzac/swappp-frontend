@@ -1,3 +1,4 @@
+import "./SwimmerList.scss";
 import useSwimmers from "../../hooks/useSwimmers";
 import SwimmerCard from "../SwimmerCard/SwimmerCard";
 

@@ -1,4 +1,6 @@
 .swimmer-card {
+  width: 140px;
+  height: 200px;
   list-style: none;
   font-size: 21px;
   font-weight: 600;
@@ -9,7 +11,7 @@
   &_element {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 }
