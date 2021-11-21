@@ -38,6 +38,7 @@ const SwimmerForm = () => {
 
   const resetForm = () => {
     setSwimmerData(initialSwimmerData);
+    setIsDisabled(true);
   };
 
   const onCreateSwimmer = (event) => {
@@ -108,7 +109,14 @@ const SwimmerForm = () => {
               onChange={changeData}
             />
           </div>
-          <button className="register-form_button" disabled={isDisabled}>
+          <button
+            className={
+              isDisabled
+                ? "register-form_button"
+                : "register-form_button-active"
+            }
+            disabled={isDisabled}
+          >
             Enviar
           </button>
         </form>
