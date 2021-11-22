@@ -1,6 +1,6 @@
 const path = {
-  register: "/register",
-  swimmers: "/swimmers",
+  register: "/registro",
+  swimmers: "/nadadores",
 };
 
 export default path;
