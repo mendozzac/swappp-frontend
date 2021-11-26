@@ -10,6 +10,9 @@ const swimmersReducer = (swimmers = [], action) => {
     case actionTypes.createSwimmer:
       newSwimmers = [...swimmers, action.swimmer];
       break;
+    case actionTypes.deleteSwimmer:
+      newSwimmers = swimmers.filter((swimmer) => swimmer.id !== action.id);
+      break;
     default:
       newSwimmers = swimmers;
   }

@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createSwimmerThunk,
+  deleteSwimmerThunk,
   loadSwimmersThunk,
 } from "../redux/thunks/swimmerThunks";
 
@@ -17,7 +18,11 @@ const useSwimmers = () => {
     dispatch(createSwimmerThunk(swimmer));
   };
 
-  return { swimmers, loadSwimmers, createSwimmer };
+  const deleteSwimmer = (id) => {
+    dispatch(deleteSwimmerThunk(id));
+  };
+
+  return { swimmers, loadSwimmers, createSwimmer, deleteSwimmer };
 };
 
 export default useSwimmers;
