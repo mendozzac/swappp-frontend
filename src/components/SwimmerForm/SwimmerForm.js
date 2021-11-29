@@ -55,7 +55,7 @@ const SwimmerForm = () => {
   };
 
   return (
-    <>
+    <div className="component-form">
       <h1 className="title">Registro</h1>
       <div className="form-box">
         <form
@@ -121,7 +121,7 @@ const SwimmerForm = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
