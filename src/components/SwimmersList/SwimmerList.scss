@@ -1,3 +1,11 @@
+@import "../../styles/extends";
+
+.component-list {
+  height: auto;
+  @extend %center-total;
+  flex-direction: column;
+}
+
 .swimmers-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
