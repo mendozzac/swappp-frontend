@@ -1,0 +1,38 @@
+@import "../../styles/extends";
+@import "../../styles/colors";
+
+.component-login {
+  height: auto;
+}
+
+.login-box {
+  @extend %center-total;
+}
+
+.login-form {
+  @extend %center-total;
+  flex-direction: column;
+  &_element {
+    @extend %center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    > input {
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      font-size: large;
+      color: $darkgray;
+    }
+  }
+  &_button {
+    @extend %button-form;
+    background-color: $disabled-button;
+    z-index: -1;
+    &-active {
+      @extend %button-form;
+      background-color: $pink;
+      cursor: pointer;
+    }
+  }
+}
