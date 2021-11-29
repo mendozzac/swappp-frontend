@@ -15,12 +15,14 @@ const Header = () => {
           </span>
         </div>
         <div className="login">
-          <img
-            src="/img/login-ico.png"
-            width="37px"
-            height="37px"
-            alt="login icono"
-          />
+          <Link className="login" to="login">
+            <img
+              src="/img/login-ico.png"
+              width="37px"
+              height="37px"
+              alt="login icono"
+            />
+          </Link>
         </div>
       </div>
     </header>

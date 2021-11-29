@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import OneSwimmerPage from "./pages/OneSwimmerPage";
 import HomePage from "./pages/HomePage";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path={path.home} element={<HomePage />}></Route>
               <Route path={path.register} element={<SwimmerForm />}></Route>
+              <Route path={path.login} element={<LoginForm />}></Route>
               <Route path={path.swimmers} element={<SwimmersPage />}></Route>
               <Route path={path.oneSwimmer} element={<OneSwimmerPage />} />
             </Routes>
