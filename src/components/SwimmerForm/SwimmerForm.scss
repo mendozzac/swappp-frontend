@@ -1,9 +1,14 @@
 @import "../../styles/extends";
 @import "../../styles/colors";
 
+.component-form {
+  height: auto;
+}
+
 .form-box {
   @extend %center-total;
 }
+
 .register-form {
   @extend %center-total;
   flex-direction: column;

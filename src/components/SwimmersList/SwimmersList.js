@@ -6,11 +6,14 @@ const SwimmersList = () => {
   const { swimmers } = useSwimmers();
 
   return (
-    <ul className="swimmers-list">
-      {swimmers.map((swimmer) => (
-        <SwimmerCard swimmer={swimmer} key={swimmer.id} />
-      ))}
-    </ul>
+    <div className="component-list">
+      <h1 className="title">Nadadores</h1>
+      <ul className="swimmers-list">
+        {swimmers.map((swimmer) => (
+          <SwimmerCard swimmer={swimmer} key={swimmer.id} />
+        ))}
+      </ul>
+    </div>
   );
 };
 
