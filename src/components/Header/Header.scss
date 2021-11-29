@@ -1,8 +1,17 @@
+@import "../../styles/extends";
+
 .header {
-  height: 61px;
-  background-color: rgba(249, 246, 246, 1);
-  text-align: center;
-  line-height: 61px;
+  @extend %updown;
+  @extend %center;
   font-size: 24px;
-  color: rgba(115, 115, 115, 1);
+  &-content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  width: 50px;
+  @extend %center-total;
 }

@@ -1,0 +1,47 @@
+@import "../../styles/colors";
+@import "../../styles/extends";
+
+.main-header__burger {
+  width: 37px;
+  height: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  left: 0;
+  cursor: pointer;
+  transition: left 0.3s;
+  transition-delay: 0.4s;
+  & > div {
+    height: 2px;
+    background-color: $gray;
+    border-radius: 15px;
+    transition: all 0.3s;
+  }
+}
+.active {
+  div {
+    &:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.main-menu-container {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  right: 100vw;
+  bottom: 0;
+  @extend %center-total;
+  transition: left 0.3s, right 0.3s;
+}
+
+.main-menu {
+  left: -100vw;
+}

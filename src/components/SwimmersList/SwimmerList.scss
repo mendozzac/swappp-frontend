@@ -1,5 +1,17 @@
 .swimmers-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .swimmers-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .swimmers-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

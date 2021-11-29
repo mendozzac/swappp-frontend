@@ -1,11 +1,12 @@
+@import "../../styles/extends";
+
 .swimmer-card {
   width: 140px;
   height: 200px;
   list-style: none;
   font-size: 21px;
   font-weight: 600;
-  display: flex;
-  justify-content: center;
+  @extend %center;
   cursor: pointer;
   margin: 20px;
   &_element {
