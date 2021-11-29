@@ -11,7 +11,14 @@ const Header = () => {
         <div className="isotipo-box">
           <span className="isotipo">Swappp</span>
         </div>
-        <div className="login"></div>
+        <div className="login">
+          <img
+            src="/img/login-ico.png"
+            width="37px"
+            height="37px"
+            alt="login icono"
+          />
+        </div>
       </div>
     </header>
   );
