@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import "./Header.scss";
 
@@ -9,7 +10,9 @@ const Header = () => {
           <Menu />
         </div>
         <div className="isotipo-box">
-          <span className="isotipo">Swappp</span>
+          <span className="isotipo">
+            <Link to="/">Swappp</Link>
+          </span>
         </div>
         <div className="login">
           <img
