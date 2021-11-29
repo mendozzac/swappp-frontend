@@ -1,0 +1,30 @@
+@import "./colors";
+
+%updown {
+  height: 61px;
+  background-color: $updown;
+  text-align: center;
+  line-height: 61px;
+  color: $gray;
+}
+
+%center-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%center {
+  display: flex;
+  justify-content: center;
+}
+
+%button-form {
+  margin-top: 40px;
+  width: 100px;
+  height: 45px;
+  border-radius: 5px;
+  border-style: none;
+  color: $color-button;
+  opacity: 0.82;
+}
