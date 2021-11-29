@@ -4,25 +4,24 @@ import "./Menu.scss";
 const Menu = () => {
   const [isActive, setIsActive] = useState(false);
 
-  const onSubmit = (event) => {
+  const onShowMenu = (event) => {
     event.preventDefault();
-    setIsActive();
+    isActive ? setIsActive(false) : setIsActive(true);
   };
   return (
     <>
       <div
-        onSubmit={onSubmit}
-        className={`main-header__burger${isActive ? "active" : ""}`}
+        onClick={onShowMenu}
+        className={`main-header__burger ${isActive ? "active" : ""}`}
       >
         <div></div>
         <div></div>
       </div>
-      <div className="main-menu-container">
+      <div className={`main-menu-container${isActive ? "__active" : ""}`}>
         <nav className="main-menu">
           <ul>
-            <li>Link link 1</li>
-            <li>Link link 2</li>
-            <li>Link link 3</li>
+            <li>Quiénes somos</li>
+            <li>Contacto</li>
           </ul>
         </nav>
       </div>
