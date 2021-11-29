@@ -22,6 +22,10 @@ const Menu = () => {
           <ul>
             <li>Quiénes somos</li>
             <li>Contacto</li>
+            <li>Nadadores</li>
+            <li>Entrenamientos</li>
+            <li>Perfil</li>
+            <li></li>
           </ul>
         </nav>
       </div>
