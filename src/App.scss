@@ -15,7 +15,7 @@ body {
 }
 
 .inside-box {
-  // width: 360px;
+  width: 360px;
   @extend %center;
 }
 
@@ -26,4 +26,8 @@ ul {
 .title {
   text-align: center;
   color: $darkgray;
+}
+
+li {
+  list-style: none;
 }
