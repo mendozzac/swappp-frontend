@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Menu.scss";
 
 const Menu = () => {
@@ -19,13 +20,17 @@ const Menu = () => {
       </div>
       <div className={`main-menu-container${isActive ? "__active" : ""}`}>
         <nav className="main-menu">
-          <ul>
+          <ul onClick={onShowMenu}>
             <li>Quiénes somos</li>
             <li>Contacto</li>
-            <li>Nadadores</li>
+            <li>
+              <Link to="nadadores">Nadadores</Link>
+            </li>
             <li>Entrenamientos</li>
             <li>Perfil</li>
-            <li></li>
+            <li>
+              <Link to="registro">Registro</Link>
+            </li>
           </ul>
         </nav>
       </div>
