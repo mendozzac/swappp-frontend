@@ -19,3 +19,15 @@
 img {
   border-radius: 50%;
 }
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .swimmer-card {
+    margin: 35px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .swimmer-card {
+    margin: 50px;
+  }
+}
