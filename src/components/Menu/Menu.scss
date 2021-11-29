@@ -11,8 +11,7 @@
   position: relative;
   left: 0;
   cursor: pointer;
-  transition: left 0.3s;
-  transition-delay: 0.4s;
+  transition: left 0.3s, right 0.3s;
   & > div {
     height: 2px;
     background-color: $gray;
@@ -22,6 +21,7 @@
 }
 .active {
   div {
+    background-color: $lightgray;
     &:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
@@ -34,14 +34,34 @@
 
 .main-menu-container {
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  left: -100vw;
+  left: -200vw;
   right: 100vw;
   bottom: 0;
+  background-color: $darkgray;
   @extend %center-total;
-  transition: left 0.3s, right 0.3s;
+  transition: left 1s, right 5s;
+  &__active {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $darkgray;
+    color: $color-button;
+    left: 0vw;
+    bottom: 0;
+    @extend %center-total;
+  }
 }
 
 .main-menu {
   left: -100vw;
+  width: 50vw;
+  height: 70vh;
+  @extend %center;
+  li {
+    cursor: pointer;
+  }
 }
