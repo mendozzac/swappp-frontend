@@ -19,6 +19,9 @@ const Menu = () => {
         <div></div>
       </div>
       <div className={`main-menu-container${isActive ? "__active" : ""}`}>
+        <div className="theme-icon">
+          <img src="/img/luna.png" alt="luna" />
+        </div>
         <nav className="main-menu">
           <ul onClick={onShowMenu}>
             <li>Quiénes somos</li>
