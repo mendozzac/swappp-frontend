@@ -28,6 +28,7 @@
   &_button {
     @extend %button-form;
     background-color: $disabled-button;
+    z-index: -1;
     &-active {
       @extend %button-form;
       background-color: $pink;

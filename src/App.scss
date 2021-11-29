@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .out-box {
   width: 100vw;
   @extend %center;
