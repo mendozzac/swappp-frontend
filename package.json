@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "watch": "jest --watchAll --collect-coverage",
+    "watch": "react-scripts test --watchAll --collect-coverage",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
