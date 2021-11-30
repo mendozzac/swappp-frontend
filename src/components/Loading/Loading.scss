@@ -1,0 +1,6 @@
+@import "../../styles/extends";
+
+.loading-box {
+  @extend %center-total;
+  flex-direction: column;
+}
