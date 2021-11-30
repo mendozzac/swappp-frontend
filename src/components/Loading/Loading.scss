@@ -4,3 +4,19 @@
   @extend %center-total;
   flex-direction: column;
 }
+
+.title-loading {
+  animation: load 5s infinite;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
