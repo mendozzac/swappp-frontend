@@ -3,7 +3,7 @@ import Loading from "./Loading";
 
 describe("Given a Loading component", () => {
   describe("When it is called", () => {
-    test("Then it should render a title and an image", () => {
+    test("Then it should render an image", () => {
       render(<Loading />);
       const expectedImg = screen.getByAltText("Cargando");
 

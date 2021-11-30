@@ -4,7 +4,7 @@ import Header from "./Header";
 
 describe("Given a Header component", () => {
   describe("When it renders", () => {
-    test("Then it should render two links and a Menu component", () => {
+    test("Then it should render a login icon", () => {
       render(
         <BrowserRouter>
           <Header />
