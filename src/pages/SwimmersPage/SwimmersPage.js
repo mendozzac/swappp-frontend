@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import SwimmersList from "../components/SwimmersList/SwimmersList";
-import useSwimmers from "../hooks/useSwimmers";
+import SwimmersList from "../../components/SwimmersList/SwimmersList";
+import useSwimmers from "../../hooks/useSwimmers";
 
 const SwimmersPage = () => {
   const { loadSwimmers } = useSwimmers();
@@ -9,7 +9,11 @@ const SwimmersPage = () => {
     loadSwimmers();
   }, [loadSwimmers]);
 
-  return <SwimmersList />;
+  return (
+    <>
+      <SwimmersList />
+    </>
+  );
 };
 
 export default SwimmersPage;
