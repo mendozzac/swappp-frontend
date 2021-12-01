@@ -14,3 +14,17 @@ export const deleteSwimmerAction = (id) => ({
   type: actionTypes.deleteSwimmer,
   id,
 });
+
+export const loadOneSwimmerAction = (swimmer) => ({
+  type: actionTypes.loadOneSwimmer,
+  swimmer,
+});
+
+export const userLoginAction = (user) => ({
+  type: actionTypes.loginUser,
+  user,
+});
+
+export const userLogoutAction = () => ({
+  type: actionTypes.logoutUser,
+});
