@@ -1,22 +1,26 @@
 import "./LoginForm.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import useUser from "../../hooks/useUser";
+import { useNavigate } from "react-router";
+import path from "../../path/path";
 
 const LoginForm = () => {
   const initialUserData = {
     username: "",
     password: "",
   };
+
   const [userData, setUserData] = useState(initialUserData);
+  const isAuth = useSelector(({ user }) => user.isAuthenticated);
+  const { loginUser } = useUser();
   const [isDisabled, setIsDisabled] = useState(true);
+  const navigate = useNavigate();
 
   const checkForm = () => {
     if (userData.username !== "" && userData.password !== "") {
       setIsDisabled(false);
     }
-  };
-
-  const onLogin = (event) => {
-    event.preventDefault();
   };
 
   const onChange = (event) => {
@@ -25,6 +29,17 @@ const LoginForm = () => {
       [event.target.id]: event.target.value,
     });
     checkForm();
+  };
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate(path.swimmers);
+    }
+  });
+
+  const onLogin = (event) => {
+    event.preventDefault();
+    loginUser(userData);
   };
 
   return (
