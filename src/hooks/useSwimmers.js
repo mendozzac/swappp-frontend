@@ -22,7 +22,12 @@ const useSwimmers = () => {
     dispatch(deleteSwimmerThunk(id));
   };
 
-  return { swimmers, loadSwimmers, createSwimmer, deleteSwimmer };
+  return {
+    swimmers,
+    loadSwimmers,
+    createSwimmer,
+    deleteSwimmer,
+  };
 };
 
 export default useSwimmers;
