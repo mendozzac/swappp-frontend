@@ -36,3 +36,7 @@
     }
   }
 }
+
+#file-upload-button {
+  @extend %button-form;
+}

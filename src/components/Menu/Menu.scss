@@ -16,7 +16,7 @@
     height: 2px;
     background-color: $gray;
     border-radius: 15px;
-    transition: all 0.3s;
+    transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 }
 .active {
@@ -27,7 +27,7 @@
     }
 
     &:nth-child(2) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-9px) rotate(-45deg);
     }
   }
 }
@@ -50,8 +50,8 @@
     height: 100vh;
     background-color: $darkgray;
     color: $color-button;
-    right: 0vw;
-    left: 0vw;
+    right: 0;
+    left: 0;
     bottom: 0;
     @extend %center-total;
   }

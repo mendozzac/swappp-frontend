@@ -10,8 +10,24 @@ import OneSwimmerPage from "./pages/OneSwimmerPage/OneSwimmerPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginForm from "./components/LoginForm/LoginForm";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import LogoutPage from "./pages/LogoutPage/LogoutPage";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { userLoginAction } from "./redux/actions/actionCreators";
+import jwtDecode from "jwt-decode";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = JSON.parse(
+      localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE)
+    );
+    if (token) {
+      dispatch(userLoginAction(jwtDecode(token.token)));
+    }
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -19,12 +35,13 @@ function App() {
         <div className="out-box">
           <div className="inside-box">
             <Routes>
-              <Route path={path.home} element={<HomePage />}></Route>
-              <Route path={path.register} element={<SwimmerForm />}></Route>
-              <Route path={path.login} element={<LoginForm />}></Route>
-              <Route path={path.swimmers} element={<SwimmersPage />}></Route>
+              <Route path={path.home} element={<HomePage />} />
+              <Route path={path.register} element={<SwimmerForm />} />
+              <Route path={path.login} element={<LoginForm />} />
+              <Route path={path.swimmers} element={<SwimmersPage />} />
               <Route path={path.oneSwimmer} element={<OneSwimmerPage />} />
               <Route path={path.notFound} element={<NotFoundPage />} />
+              <Route path={path.logout} element={<LogoutPage />} />
             </Routes>
           </div>
         </div>

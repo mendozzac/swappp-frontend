@@ -8,9 +8,8 @@ const SwimmerForm = () => {
   const initialSwimmerData = {
     name: "",
     surname: "",
-    email: "",
-    username: "",
-    password: "",
+    birthdate: "",
+    image: "",
   };
 
   const [swimmerData, setSwimmerData] = useState(initialSwimmerData);
@@ -20,9 +19,8 @@ const SwimmerForm = () => {
     if (
       swimmerData.name !== "" &&
       swimmerData.surname !== "" &&
-      swimmerData.email !== "" &&
-      swimmerData.username !== "" &&
-      swimmerData.password !== ""
+      swimmerData.birthdate !== "" &&
+      swimmerData.image !== ""
     ) {
       setIsDisabled(false);
     }
@@ -46,9 +44,8 @@ const SwimmerForm = () => {
     const newSwimmer = {
       name: swimmerData.name,
       surname: swimmerData.surname,
-      email: swimmerData.email,
-      username: swimmerData.username,
-      password: swimmerData.password,
+      birthdate: swimmerData.birthdate,
+      image: swimmerData.image,
     };
     createSwimmer(newSwimmer);
     resetForm();
@@ -82,30 +79,21 @@ const SwimmerForm = () => {
               onChange={changeData}
             />
           </div>
-          <div className="register-form_element">
-            <label htmlFor="email">Email </label>
+          <div className="register-form_element birthdate">
+            <label htmlFor="birthdate">Fecha de Nacimiento </label>
             <input
-              type="email"
-              id="email"
-              value={swimmerData.email}
+              type="date"
+              id="birthdate"
+              value={swimmerData.birthdate}
               onChange={changeData}
             />
           </div>
-          <div className="register-form_element">
-            <label htmlFor="username">Nombre de usuario </label>
+          <div className="register-form_element photo">
+            <label htmlFor="image">Foto </label>
             <input
-              type="text"
-              id="username"
-              value={swimmerData.username}
-              onChange={changeData}
-            />
-          </div>
-          <div className="register-form_element">
-            <label htmlFor="password">Contraseña </label>
-            <input
-              type="password"
-              id="password"
-              value={swimmerData.password}
+              type="file"
+              id="image"
+              value={swimmerData.image}
               onChange={changeData}
             />
           </div>
