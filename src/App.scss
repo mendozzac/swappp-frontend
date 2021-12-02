@@ -8,6 +8,27 @@ body {
   overflow-x: hidden;
 }
 
+.dark {
+  background-color: $darkgray;
+  color: $updown;
+  .title {
+    color: $lightgray;
+  }
+  .header {
+    background-color: $gray;
+    .isotipo {
+      a {
+        color: $updown;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $gray;
+    color: $updown;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

@@ -11,12 +11,14 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import LogoutPage from "./pages/LogoutPage/LogoutPage";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { userLoginAction } from "./redux/actions/actionCreators";
 import jwtDecode from "jwt-decode";
 import OneSwimmerPage from "./pages/OneSwimmerPage/OneSwimmerPage";
+import ThemeContext from "./contexts/ThemeContext";
 
 function App() {
+  const { darkMode } = useContext(ThemeContext);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,9 +31,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "dark" : ""}`}>
       <BrowserRouter>
-        <Header />
+        <Header className={darkMode ? "dark-header" : ""} />
         <div className="out-box">
           <div className="inside-box">
             <Routes>
@@ -45,7 +47,7 @@ function App() {
             </Routes>
           </div>
         </div>
-        <Footer />
+        <Footer className={darkMode ? "dark-footer" : ""} />
       </BrowserRouter>
     </div>
   );
