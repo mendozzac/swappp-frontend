@@ -4,10 +4,11 @@ import { loadOneSwimmerThunk } from "../redux/thunks/swimmerThunks";
 
 const useSwimmer = () => {
   const swimmer = useSelector(({ swimmer }) => swimmer);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
+
   const loadOneSwimmer = useCallback(
-    (swimmerId) => {
-      dispatch(loadOneSwimmerThunk(swimmerId));
+    (idSwimmer) => {
+      dispatch(loadOneSwimmerThunk(idSwimmer));
     },
     [dispatch]
   );

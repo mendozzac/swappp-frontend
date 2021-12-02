@@ -1,9 +1,16 @@
 import "./SwimmerCard.scss";
+import { useNavigate } from "react-router";
+import path from "../../path/path";
 
 const SwimmerCard = ({ swimmer }) => {
+  const navigate = useNavigate();
+
+  const onSwimmer = (swimmer) => {
+    navigate(`${path.swimmers}/${swimmer.id}`);
+  };
   return (
     <li className="swimmer-card">
-      <div className="swimmer-card_element">
+      <div className="swimmer-card_element" onClick={() => onSwimmer(swimmer)}>
         <img
           src={swimmer.image}
           alt={swimmer.name}

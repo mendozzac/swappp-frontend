@@ -35,10 +35,10 @@ export const deleteSwimmerThunk = (id) => {
   };
 };
 
-export const loadOneSwimmerThunk = (swimmerId) => {
+export const loadOneSwimmerThunk = (idSwimmer) => {
   return async (dispatch) => {
     const { data: swimmer } = await axios.get(
-      `${apiUrl}${path.swimmers}/${swimmerId}`
+      `${apiUrl}${path.swimmers}/${idSwimmer}`
     );
     dispatch(loadOneSwimmerAction(swimmer));
   };

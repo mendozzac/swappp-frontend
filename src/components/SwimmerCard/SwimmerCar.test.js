@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import SwimmerCard from "./SwimmerCard";
 import ReactTestRenderer from "react-test-renderer";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a SwimmerCard component", () => {
   describe("When it receives swimmer information", () => {
@@ -20,7 +21,11 @@ describe("Given a SwimmerCard component", () => {
         },
       };
 
-      render(<SwimmerCard swimmer={swimmer} />);
+      render(
+        <BrowserRouter>
+          <SwimmerCard swimmer={swimmer} />
+        </BrowserRouter>
+      );
       const newSwimmer = screen.getByText("Geofrey");
 
       expect(newSwimmer).toBeInTheDocument();
@@ -44,7 +49,9 @@ describe("Given a SwimmerCard component", () => {
       };
 
       const newSwimmer = ReactTestRenderer.create(
-        <SwimmerCard swimmer={swimmer} />
+        <BrowserRouter>
+          <SwimmerCard swimmer={swimmer} />
+        </BrowserRouter>
       );
       expect(newSwimmer.toJSON()).toMatchSnapshot();
     });

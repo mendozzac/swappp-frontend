@@ -4,7 +4,7 @@ const oneSwimmerReducer = (swimmer = {}, action) => {
   let newSwimmer;
   switch (action.type) {
     case actionTypes.loadOneSwimmer:
-      newSwimmer = action.swimmer;
+      newSwimmer = { ...action.swimmer };
       break;
     default:
       newSwimmer = swimmer;
