@@ -6,7 +6,6 @@ import SwimmerForm from "./components/SwimmerForm/SwimmerForm";
 import SwimmersPage from "./pages/SwimmersPage/SwimmersPage";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import OneSwimmerPage from "./pages/OneSwimmerPage/OneSwimmerPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginForm from "./components/LoginForm/LoginForm";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -15,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { userLoginAction } from "./redux/actions/actionCreators";
 import jwtDecode from "jwt-decode";
+import OneSwimmerPage from "./pages/OneSwimmerPage/OneSwimmerPage";
 
 function App() {
   const dispatch = useDispatch();

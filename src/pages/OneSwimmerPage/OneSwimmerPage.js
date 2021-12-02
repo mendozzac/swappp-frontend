@@ -1,15 +1,17 @@
 import SwimmerDetail from "../../components/SwimmerDeatail/SwimmerDetail";
 import { useEffect } from "react";
 import useSwimmer from "../../hooks/useSwimmer";
+import { useParams } from "react-router";
 
 const OneSwimmerPage = () => {
-  const { loadOneSwimmer } = useSwimmer();
+  const { loadOneSwimmer, swimmer } = useSwimmer();
+  const { idSwimmer } = useParams();
 
   useEffect(() => {
-    loadOneSwimmer();
-  }, [loadOneSwimmer]);
+    loadOneSwimmer(idSwimmer);
+  }, [loadOneSwimmer, idSwimmer]);
 
-  return <SwimmerDetail />;
+  return <SwimmerDetail swimmer={swimmer} />;
 };
 
 export default OneSwimmerPage;

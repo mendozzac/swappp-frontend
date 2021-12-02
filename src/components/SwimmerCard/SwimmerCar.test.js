@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import SwimmerCard from "./SwimmerCard";
-import ReactTestRenderer from "react-test-renderer";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a SwimmerCard component", () => {
   describe("When it receives swimmer information", () => {
@@ -20,33 +20,14 @@ describe("Given a SwimmerCard component", () => {
         },
       };
 
-      render(<SwimmerCard swimmer={swimmer} />);
+      render(
+        <BrowserRouter>
+          <SwimmerCard swimmer={swimmer} />
+        </BrowserRouter>
+      );
       const newSwimmer = screen.getByText("Geofrey");
 
       expect(newSwimmer).toBeInTheDocument();
-    });
-  });
-  describe("When it receives an object swimmer", () => {
-    test("Then it should render the swimmer", () => {
-      const swimmer = {
-        name: "Geofrey",
-        surname: "Campbell",
-        birthdate: "11/08/90",
-        height: 190,
-        weight: 80,
-        times: {
-          distance: 200,
-          style: "Espalda",
-          date: "22/09/19",
-          time: "1:56.09",
-          pool: 50,
-        },
-      };
-
-      const newSwimmer = ReactTestRenderer.create(
-        <SwimmerCard swimmer={swimmer} />
-      );
-      expect(newSwimmer.toJSON()).toMatchSnapshot();
     });
   });
 });

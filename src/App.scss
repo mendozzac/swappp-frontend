@@ -35,3 +35,15 @@ ul {
 li {
   list-style: none;
 }
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .inside-box {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .inside-box {
+    width: 1000px;
+  }
+}
