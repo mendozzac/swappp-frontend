@@ -9,7 +9,7 @@ const SwimmerForm = () => {
     name: "",
     surname: "",
     birthdate: "",
-    image: "",
+    // image: "",
   };
 
   const [swimmerData, setSwimmerData] = useState(initialSwimmerData);
@@ -18,9 +18,8 @@ const SwimmerForm = () => {
   const checkForm = () => {
     if (
       swimmerData.name !== "" &&
-      swimmerData.surname !== "" &&
-      swimmerData.birthdate !== "" &&
-      swimmerData.image !== ""
+      swimmerData.surname !== ""
+      // swimmerData.birthdate !== ""
     ) {
       setIsDisabled(false);
     }
@@ -41,12 +40,12 @@ const SwimmerForm = () => {
 
   const onCreateSwimmer = (event) => {
     event.preventDefault();
-    const newSwimmer = {
-      name: swimmerData.name,
-      surname: swimmerData.surname,
-      birthdate: swimmerData.birthdate,
-      image: swimmerData.image,
-    };
+
+    const newSwimmer = new swimmerData();
+    newSwimmer.append("name", swimmerData.name);
+    newSwimmer.append("surname", swimmerData.surname);
+    newSwimmer.append("birthdate", swimmerData.birthdate);
+
     createSwimmer(newSwimmer);
     resetForm();
   };
@@ -88,7 +87,7 @@ const SwimmerForm = () => {
               onChange={changeData}
             />
           </div>
-          <div className="register-form_element photo">
+          {/* <div className="register-form_element photo">
             <label htmlFor="image">Foto </label>
             <input
               type="file"
@@ -96,7 +95,7 @@ const SwimmerForm = () => {
               value={swimmerData.image}
               onChange={changeData}
             />
-          </div>
+          </div> */}
           <button
             className={
               isDisabled
