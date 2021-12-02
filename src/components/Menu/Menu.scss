@@ -19,6 +19,7 @@
     transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 }
+
 .active {
   div {
     background-color: $lightgray;
@@ -67,6 +68,11 @@
   position: absolute;
   right: 5.5%;
   top: 15px;
+}
+
+.theme-switcher {
+  position: inherit;
+  top: 0;
 }
 
 .main-menu {

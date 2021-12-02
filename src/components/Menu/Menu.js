@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ThemeContext from "../../contexts/ThemeContext";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import "./Menu.scss";
 
 const Menu = () => {
+  const { darkMode } = useContext(ThemeContext);
   const { isAuthenticated } = useSelector(({ user }) => user);
   const [isActive, setIsActive] = useState(false);
 
@@ -15,14 +18,16 @@ const Menu = () => {
     <>
       <div
         onClick={onShowMenu}
-        className={`main-header__burger ${isActive ? "active" : ""}`}
+        className={`main-header__burger ${isActive ? "active" : ""}${
+          darkMode ? "dark" : ""
+        }`}
       >
         <div></div>
         <div></div>
       </div>
       <div className={`main-menu-container${isActive ? "__active" : ""}`}>
         <div className="theme-icon">
-          <img src="/img/luna.png" alt="luna" />
+          <ThemeSwitcher className="theme-icon__img" />
         </div>
         <nav className="main-menu">
           <ul onClick={onShowMenu}>
