@@ -1,10 +1,22 @@
+import { useNavigate, useParams } from "react-router";
+import useSwimmers from "../../hooks/useSwimmers";
 import Loading from "../Loading/Loading";
 import "./SwimmerDetail.scss";
+import path from "../../path/path";
 
 const SwimmerDetail = ({ swimmer }) => {
+  const { deleteSwimmer } = useSwimmers();
+  const { idSwimmer } = useParams();
+  const navigate = useNavigate();
+
+  const onDelete = (event) => {
+    event.preventDefault();
+    deleteSwimmer(idSwimmer);
+    navigate(path.swimmers);
+  };
   return swimmer ? (
     <>
-      <div>
+      <div className="swimer-data-box" onClick={onDelete}>
         <div className="swimmer-data">
           <div className="swimmer-data swimmer-data__principal">
             <img
@@ -28,7 +40,6 @@ const SwimmerDetail = ({ swimmer }) => {
               Peso: <span>{swimmer.weight}kg</span>
             </p>
             <p className="times">Marcas: </p>
-            <span></span>
           </div>
         </div>
         <div className="swimmer-times">

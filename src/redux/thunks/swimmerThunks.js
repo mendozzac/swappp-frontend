@@ -26,11 +26,13 @@ export const createSwimmerThunk = (swimmer) => {
   };
 };
 
-export const deleteSwimmerThunk = (id) => {
+export const deleteSwimmerThunk = (idSwimmer) => {
   return async (dispatch) => {
-    const { status } = await axios.delete(`${apiUrl}${id}`);
+    const { status } = await axios.delete(
+      `${apiUrl}${path.swimmers}/${idSwimmer}`
+    );
     if (status === 200) {
-      dispatch(deleteSwimmerAction(id));
+      dispatch(deleteSwimmerAction(idSwimmer));
     }
   };
 };
