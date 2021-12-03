@@ -1,4 +1,4 @@
-import SwimmerDetail from "../../components/SwimmerDeatail/SwimmerDetail";
+import SwimmerDetail from "../../components/SwimmerDetail/SwimmerDetail";
 import { useEffect } from "react";
 import useSwimmer from "../../hooks/useSwimmer";
 import { useNavigate, useParams } from "react-router";

@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import SwimmerDetail from "../../components/SwimmerDeatail/SwimmerDetail";
+import SwimmerDetail from "../../components/SwimmerDetail/SwimmerDetail";
 import configureStore from "../../redux/store/index";
 
 describe("Given a OneSwimmerPage", () => {
