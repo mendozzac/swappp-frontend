@@ -2,7 +2,7 @@ import { loadSwimmersAction } from "../../actions/actionCreators";
 import swimmersReducer from "./swimmersReducer";
 
 describe("Given a swimmerReducer reducer", () => {
-  describe("When it receives an empty swimmers list and a load action", () => {
+  describe("When it receives a swimmers list and a load action", () => {
     test("Then it should return a new swimmers list", () => {
       const initialSwimmersList = [];
       const swimmersList = [
