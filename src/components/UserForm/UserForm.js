@@ -1,15 +1,18 @@
-import "./LoginForm.scss";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser";
+import path from "../../path/path";
 
-const LoginForm = () => {
+const UserForm = () => {
+  const { createUser } = useUser();
+  const navigate = useNavigate();
+
   const initialUserData = {
     username: "",
     password: "",
   };
 
   const [userData, setUserData] = useState(initialUserData);
-  const { loginUser } = useUser();
   const [isDisabled, setIsDisabled] = useState(true);
 
   const checkForm = () => {
@@ -18,7 +21,7 @@ const LoginForm = () => {
     }
   };
 
-  const onChange = (event) => {
+  const changeData = (event) => {
     setUserData({
       ...userData,
       [event.target.id]: event.target.value,
@@ -26,20 +29,25 @@ const LoginForm = () => {
     checkForm();
   };
 
-  const onLogin = (event) => {
+  const onCreateUser = (event) => {
     event.preventDefault();
-    loginUser(userData);
+    const newUser = {
+      username: userData.username,
+      password: userData.password,
+    };
+    createUser(newUser);
+    navigate(path.registerUser);
   };
 
   return (
-    <div className="component-login">
-      <h1 className="title">Login</h1>
-      <div className="login-box">
+    <div className="component-form">
+      <h1 className="title">Registro</h1>
+      <div className="register-box">
         <form
-          className="login-form"
+          className="register-form"
           noValidate
           autoComplete="off"
-          onSubmit={onLogin}
+          onSubmit={onCreateUser}
         >
           <div className="login-form_element">
             <label htmlFor="username">Nombre de Usuario </label>
@@ -47,7 +55,7 @@ const LoginForm = () => {
               type="text"
               id="username"
               value={userData.username}
-              onChange={onChange}
+              onChange={changeData}
             />
           </div>
           <div className="login-form_element">
@@ -56,23 +64,25 @@ const LoginForm = () => {
               type="password"
               id="password"
               value={userData.password}
-              onChange={onChange}
+              onChange={changeData}
             />
           </div>
-          <button
-            className={
-              isDisabled
-                ? "register-form_button"
-                : "register-form_button-active"
-            }
-            disabled={isDisabled}
-          >
-            Enviar
-          </button>
+          <div>
+            <button
+              className={
+                isDisabled
+                  ? "register-form_button"
+                  : "register-form_button-active"
+              }
+              disabled={isDisabled}
+            >
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default UserForm;
