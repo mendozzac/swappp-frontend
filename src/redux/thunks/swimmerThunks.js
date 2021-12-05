@@ -5,6 +5,7 @@ import {
   deleteSwimmerAction,
   loadSwimmersAction,
   loadOneSwimmerAction,
+  updateSwimmerAction,
 } from "../actions/actionCreators";
 
 const apiUrl = process.env.REACT_APP_API_URL;
@@ -44,4 +45,12 @@ export const loadOneSwimmerThunk = (idSwimmer) => {
     );
     dispatch(loadOneSwimmerAction(swimmer));
   };
+};
+
+export const updateSwimmerThunk = (swimmer) => async (dispatch) => {
+  const { data: newSwimmer } = await axios.put(
+    `${apiUrl}${path.swimmers}/${swimmer.id}`,
+    swimmer
+  );
+  dispatch(updateSwimmerAction(newSwimmer));
 };

@@ -5,6 +5,7 @@ const path = {
   newSwimmer: "/registro/:idUser",
   login: "/login",
   swimmers: "/nadadores",
+  edit: "/nadadores/edit/:idSwimmer",
   oneSwimmer: "/nadadores/:idSwimmer",
   logout: "/logout",
   notFound: "*",
