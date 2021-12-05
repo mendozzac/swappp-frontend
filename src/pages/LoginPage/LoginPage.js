@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import path from "../../path/path";
 import { useEffect } from "react";
+import Loading from "../../components/Loading/Loading";
 
 const LoginPage = () => {
   const isAuth = useSelector(({ user }) => user.isAuthenticated);
@@ -10,9 +11,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuth) {
-      navigate(path.swimmers);
-    }
+    isAuth ? navigate(path.swimmers) : <Loading />;
   });
   return <LoginForm />;
 };

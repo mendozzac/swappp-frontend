@@ -12,10 +12,10 @@ const SwimmerEdit = () => {
   const navigate = useNavigate();
 
   const initialSwimmerData = {
-    name: swimmer.name,
-    surname: swimmer.surname,
-    height: swimmer.height,
-    weight: swimmer.weight,
+    name: swimmer.name || "",
+    surname: swimmer.surname || "",
+    height: swimmer.height || "",
+    weight: swimmer.weight || "",
   };
   const idSwimmer = swimmer.id;
   const [swimmerData, setSwimmerData] = useState(initialSwimmerData);
@@ -38,7 +38,6 @@ const SwimmerEdit = () => {
     };
     updateSwimmer(newSwimmer);
     navigate(`${path.swimmers}/${newSwimmer.id}`);
-    console.log(`${path.swimmers}/${newSwimmer.id}`);
   };
 
   const onDelete = (event) => {
