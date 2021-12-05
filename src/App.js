@@ -18,6 +18,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpSwimmerPage from "./pages/RegisterPages/SignUpSwimmerPage";
 import LoginSwimmerPage from "./pages/RegisterPages/LoginSwimmerPage";
 import RegisterSwimmerPage from "./pages/RegisterPages/RegisterSwimmerPage";
+import SwimmerEditPage from "./pages/SwimmerEditPage/SwimmerEditPage";
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -46,6 +47,7 @@ function App() {
               <Route path={path.login} element={<LoginPage />} />
               <Route path={path.swimmers} element={<SwimmersPage />} />
               <Route path={path.oneSwimmer} element={<OneSwimmerPage />} />
+              <Route path={path.edit} element={<SwimmerEditPage />} />
               <Route path={path.notFound} element={<NotFoundPage />} />
               <Route path={path.logout} element={<LogoutPage />} />
             </Routes>

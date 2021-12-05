@@ -20,6 +20,12 @@ export const loadOneSwimmerAction = (swimmer) => ({
   swimmer,
 });
 
+export const updateSwimmerAction = (swimmer, id) => ({
+  type: actionTypes.updateSwimmer,
+  swimmer,
+  id,
+});
+
 export const userLoginAction = (user) => ({
   type: actionTypes.loginUser,
   user,
