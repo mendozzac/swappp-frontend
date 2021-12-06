@@ -2,8 +2,11 @@ import { useNavigate } from "react-router";
 import Loading from "../Loading/Loading";
 import "./SwimmerDetail.scss";
 import path from "../../path/path";
+import { useSelector } from "react-redux";
+import TimeCard from "../TimeCard/TimeCard";
 
 const SwimmerDetail = ({ swimmer }) => {
+  const isCoach = useSelector(({ user }) => user.user.isCoach);
   const navigate = useNavigate();
 
   const onNavigate = (event) => {
@@ -11,10 +14,15 @@ const SwimmerDetail = ({ swimmer }) => {
     navigate(`${path.swimmers}/edit/${swimmer.id}`);
   };
 
+  const onReturn = (event) => {
+    event.preventDefault();
+    navigate(path.swimmers);
+  };
+
   return swimmer ? (
     <>
       <div className="swimer-data-box">
-        <div className="swimmer-data">
+        <div className="swimmer-data" onClick={onReturn}>
           <div className="swimmer-data swimmer-data__principal">
             <img
               className="picture"
@@ -40,13 +48,22 @@ const SwimmerDetail = ({ swimmer }) => {
           </div>
         </div>
         <div className="swimmer-times">
-          <ul>
-            <li className="time"></li>
+          <ul className="time">
+            {swimmer.times &&
+              swimmer.times.map((time, index) => (
+                <TimeCard time={time} key={index} />
+              ))}
           </ul>
         </div>
-        <button className="button" onClick={onNavigate}>
-          Edit
-        </button>
+        <div className="button-box">
+          {isCoach ? (
+            <button className="button" onClick={onNavigate}>
+              Editar
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </>
   ) : (
