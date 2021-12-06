@@ -11,7 +11,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    isAuth ? navigate(path.swimmers) : <Loading />;
+    isAuth ? navigate(path.season) : <Loading />;
   });
   return <LoginForm />;
 };
