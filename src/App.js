@@ -20,6 +20,7 @@ import LoginSwimmerPage from "./pages/RegisterPages/LoginSwimmerPage";
 import RegisterSwimmerPage from "./pages/RegisterPages/RegisterSwimmerPage";
 import SwimmerEditPage from "./pages/SwimmerEditPage/SwimmerEditPage";
 import SeasonPage from "./pages/SeasonPage/SeasonPage";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -42,15 +43,71 @@ function App() {
           <div className="inside-box">
             <Routes>
               <Route path={path.home} element={<HomePage />} />
-              <Route path={path.season} element={<SeasonPage />} />
-              <Route path={path.register} element={<SignUpSwimmerPage />} />
-              <Route path={path.registerUser} element={<LoginSwimmerPage />} />
-              <Route path={path.newSwimmer} element={<RegisterSwimmerPage />} />
-              <Route path={path.swimmers} element={<SwimmersPage />} />
-              <Route path={path.oneSwimmer} element={<OneSwimmerPage />} />
-              <Route path={path.edit} element={<SwimmerEditPage />} />
+              <Route
+                path={path.season}
+                element={
+                  <ProtectedRoute>
+                    <SeasonPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.register}
+                element={
+                  <ProtectedRoute>
+                    <SignUpSwimmerPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.registerUser}
+                element={
+                  <ProtectedRoute>
+                    <LoginSwimmerPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.newSwimmer}
+                element={
+                  <ProtectedRoute>
+                    <RegisterSwimmerPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.swimmers}
+                element={
+                  <ProtectedRoute>
+                    <SwimmersPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.oneSwimmer}
+                element={
+                  <ProtectedRoute>
+                    <OneSwimmerPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path={path.edit}
+                element={
+                  <ProtectedRoute>
+                    <SwimmerEditPage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path={path.login} element={<LoginPage />} />
-              <Route path={path.logout} element={<LogoutPage />} />
+              <Route
+                path={path.logout}
+                element={
+                  <ProtectedRoute>
+                    <LogoutPage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path={path.notFound} element={<NotFoundPage />} />
             </Routes>
           </div>
