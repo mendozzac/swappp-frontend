@@ -8,6 +8,7 @@ import "./Menu.scss";
 const Menu = () => {
   const { darkMode } = useContext(ThemeContext);
   const { isAuthenticated } = useSelector(({ user }) => user);
+  const isCoach = useSelector(({ user }) => user.user.isCoach);
   const [isActive, setIsActive] = useState(false);
 
   const onShowMenu = (event) => {
@@ -36,12 +37,11 @@ const Menu = () => {
                 <li>
                   <Link to="nadadores">Nadadores</Link>
                 </li>
-                <li>Entrenamientos</li>
-                <li>Perfil</li>
                 <li>
-                  <Link to="registro">Registro</Link>
+                  <Link to="21-22">Entrenamientos</Link>
                 </li>
-                <li>Quiénes somos</li>
+                <li>Perfil</li>
+                <li>{isCoach ? <Link to="registro">Registro</Link> : ""}</li>
                 <li>Contacto</li>
               </>
             ) : (
