@@ -34,7 +34,6 @@ const TimeEdit = () => {
       swimmer: idSwimmer,
     };
     createTime(newTime);
-    console.log(newTime);
     resetForm();
   };
 
