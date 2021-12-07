@@ -1,7 +1,15 @@
 import SwimmerEdit from "../../components/SwimmerEdit/SwimmerEdit";
+import TimeEdit from "../../components/TimeEdit/TimeEdit";
 
 const SwimmerEditPage = () => {
-  return <SwimmerEdit />;
+  return (
+    <>
+      <div>
+        <SwimmerEdit />
+        <TimeEdit />
+      </div>
+    </>
+  );
 };
 
 export default SwimmerEditPage;

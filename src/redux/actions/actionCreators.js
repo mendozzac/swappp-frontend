@@ -44,3 +44,14 @@ export const loadUsersAction = (users) => ({
   type: actionTypes.loadUsers,
   users,
 });
+
+export const createTimeAction = (time) => ({
+  type: actionTypes.createTime,
+  time,
+});
+
+export const updateTimeAction = (time, id) => ({
+  type: actionTypes.updateTime,
+  time,
+  id,
+});

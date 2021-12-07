@@ -1,0 +1,12 @@
+@import "../../styles/colors";
+
+.time {
+  margin: 10px;
+  &-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &-element {
+    color: $darkgray;
+  }
+}

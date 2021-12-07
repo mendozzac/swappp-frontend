@@ -20,7 +20,7 @@ import LoginSwimmerPage from "./pages/RegisterPages/LoginSwimmerPage";
 import RegisterSwimmerPage from "./pages/RegisterPages/RegisterSwimmerPage";
 import SwimmerEditPage from "./pages/SwimmerEditPage/SwimmerEditPage";
 import SeasonPage from "./pages/SeasonPage/SeasonPage";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute";
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
