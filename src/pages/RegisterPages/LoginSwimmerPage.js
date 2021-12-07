@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import LoginSwimmer from "../../components/LoginSwimmer/LoginSwimmer";
 import useUser from "../../hooks/useUser";
 
-const LoginUserPage = () => {
+const LoginSwimmerPage = () => {
   const { loadUsers } = useUser();
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const LoginUserPage = () => {
   return <LoginSwimmer />;
 };
 
-export default LoginUserPage;
+export default LoginSwimmerPage;

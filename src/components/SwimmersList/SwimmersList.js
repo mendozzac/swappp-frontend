@@ -5,6 +5,7 @@ import Loading from "../Loading/Loading";
 
 const SwimmersList = () => {
   const { swimmers } = useSwimmers();
+
   const sortedSwimmers = swimmers.sort((a, b) => {
     if (a.surname < b.surname) {
       return -1;

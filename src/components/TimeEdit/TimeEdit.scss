@@ -1,0 +1,29 @@
+@import "../../styles/colors";
+@import "../../styles/extends";
+
+.time-data {
+  @extend %center;
+  color: $darkgray;
+  > input {
+    width: 70px;
+    margin: 5px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  &-box {
+    @extend %center-total;
+    .button {
+      margin-top: 0;
+      width: 50px;
+      height: 25px;
+    }
+  }
+}
+
+.times {
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 0;
+}

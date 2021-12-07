@@ -8,6 +8,8 @@ const actionTypes = {
   loginUser: "loginUser",
   logoutUser: "logoutUser",
   loadUsers: "loadUsers",
+  createTime: "createTime",
+  updateTime: "updateTime",
 };
 
 export default actionTypes;

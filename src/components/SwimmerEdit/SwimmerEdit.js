@@ -48,66 +48,62 @@ const SwimmerEdit = () => {
 
   return (
     <>
-      <form
-        className="swimer-data-box"
-        noValidate
-        autoComplete="off"
-        onSubmit={onChange}
-      >
-        <div className="swimmer-data">
-          <div className="swimmer-data swimmer-data__principal">
-            <img
-              className="picture"
-              src={swimmer.image}
-              width="140px"
-              height="140px"
-              alt={swimmer.name}
-            />
-            <div className="swimmer-data__name">
-              <label htmlFor="name" />
+      <div className="container-edit">
+        <form
+          className="swimer-data-box"
+          noValidate
+          autoComplete="off"
+          onSubmit={onChange}
+        >
+          <div className="swimmer-data">
+            <div className="swimmer-data swimmer-data__principal">
+              <img
+                className="picture"
+                src={swimmer.image}
+                width="140px"
+                height="140px"
+                alt={swimmer.name}
+              />
+              <div className="swimmer-data__name">
+                <label htmlFor="name" />
+                <input
+                  type="text"
+                  id="name"
+                  value={swimmerData.name}
+                  onChange={changeData}
+                />
+                <label htmlFor="surname" />
+                <input
+                  id="surname"
+                  value={swimmerData.surname}
+                  onChange={changeData}
+                />
+              </div>
+            </div>
+            <div className="swimmer-data swimmer-data__morphologic">
+              <label htmlFor="height">Altura: </label>
               <input
-                type="text"
-                id="name"
-                value={swimmerData.name}
+                id="height"
+                value={swimmerData.height}
                 onChange={changeData}
               />
-              <label htmlFor="surname" />
+
+              <label htmlFor="weight">Peso: </label>
               <input
-                id="surname"
-                value={swimmerData.surname}
+                id="weight"
+                value={swimmerData.weight}
                 onChange={changeData}
               />
-              <input className="year"></input>
             </div>
           </div>
-          <div className="swimmer-data swimmer-data__morphologic">
-            <label htmlFor="height">Altura: </label>
-            <input
-              id="height"
-              value={swimmerData.height}
-              onChange={changeData}
-            />
-
-            <label htmlFor="weight">Peso: </label>
-            <input
-              id="weight"
-              value={swimmerData.weight}
-              onChange={changeData}
-            />
-
-            <p className="times">Marcas: </p>
+          <div className="button-box">
+            <button className="button button-edit">Enviar</button>
+            <button className="button button-edit" onClick={onDelete}>
+              Baja
+            </button>
           </div>
-        </div>
-        <div className="swimmer-times">
-          <ul>
-            <li className="time"></li>
-          </ul>
-        </div>
-        <button className="button">Enviar</button>
-        <button className="button" onClick={onDelete}>
-          Borrar
-        </button>
-      </form>
+        </form>
+      </div>
     </>
   );
 };
