@@ -20,8 +20,8 @@ import LoginSwimmerPage from "./pages/RegisterPages/LoginSwimmerPage";
 import RegisterSwimmerPage from "./pages/RegisterPages/RegisterSwimmerPage";
 import SwimmerEditPage from "./pages/SwimmerEditPage/SwimmerEditPage";
 import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute";
-// import OneSessionPage from "./pages/OneSessionPage/OneSessionPage";
-// import SessionsPage from "./pages/SessionsPage/SessionsPage";
+import OneSessionPage from "./pages/OneSessionPage/OneSessionPage";
+import SessionsPage from "./pages/SessionsPage/SessionsPage";
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -44,7 +44,7 @@ function App() {
           <div className="inside-box">
             <Routes>
               <Route path={path.home} element={<HomePage />} />
-              {/* <Route
+              <Route
                 path={path.season}
                 element={
                   <ProtectedRoute>
@@ -59,7 +59,7 @@ function App() {
                     <OneSessionPage />
                   </ProtectedRoute>
                 }
-              /> */}
+              />
 
               <Route
                 path={path.register}
