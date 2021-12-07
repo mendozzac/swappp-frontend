@@ -37,6 +37,11 @@
   }
 }
 
-#file-upload-button {
-  @extend %button-form;
+.photo {
+  width: 260px;
+  &-element {
+    width: 500px;
+    color: $darkgray;
+    display: none;
+  }
 }

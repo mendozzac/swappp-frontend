@@ -34,6 +34,7 @@ const UserForm = () => {
     const newUser = {
       username: userData.username,
       password: userData.password,
+      isCoach: false,
     };
     createUser(newUser);
     navigate(path.registerUser);

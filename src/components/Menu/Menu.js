@@ -8,7 +8,7 @@ import "./Menu.scss";
 const Menu = () => {
   const { darkMode } = useContext(ThemeContext);
   const { isAuthenticated } = useSelector(({ user }) => user);
-  const isCoach = useSelector(({ user }) => user.user.isCoach);
+  const isCoach = useSelector(({ user }) => user?.user?.isCoach);
   const [isActive, setIsActive] = useState(false);
 
   const onShowMenu = (event) => {
