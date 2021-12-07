@@ -14,8 +14,8 @@ const useSwimmers = () => {
     dispatch(loadSwimmersThunk());
   }, [dispatch]);
 
-  const createSwimmer = (swimmer) => {
-    dispatch(createSwimmerThunk(swimmer));
+  const createSwimmer = (idUser, swimmer) => {
+    dispatch(createSwimmerThunk(idUser, swimmer));
   };
 
   const deleteSwimmer = (idSwimmer) => {

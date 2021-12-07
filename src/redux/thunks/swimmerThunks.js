@@ -17,10 +17,10 @@ export const loadSwimmersThunk = () => {
   };
 };
 
-export const createSwimmerThunk = (swimmer) => {
+export const createSwimmerThunk = (id, swimmer) => {
   return async (dispatch) => {
     const { data: newSwimmer } = await axios.post(
-      `${apiUrl}${path.register}/${swimmer.user}`,
+      `${apiUrl}${path.register}/${id}`,
       swimmer
     );
     dispatch(createSwimmerAction(newSwimmer));

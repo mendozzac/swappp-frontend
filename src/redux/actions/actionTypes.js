@@ -4,6 +4,8 @@ const actionTypes = {
   deleteSwimmer: "deleteSwimmer",
   loadOneSwimmer: "loadOneSwimmer",
   updateSwimmer: "updateSwimmer",
+  loadSessions: "loadSessions",
+  loadOneSession: "loadOneSession",
   createUser: "createUser",
   loginUser: "loginUser",
   logoutUser: "logoutUser",
