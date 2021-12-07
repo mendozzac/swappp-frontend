@@ -4,6 +4,7 @@ import swimmersReducer from "./swimmersReducer/swimmersReducer";
 import timesReducer from "./timesReducer/timesReducer";
 import userReducer from "./userReducer/userReducer";
 import usersReducer from "./usersReducer/usersReducer";
+import sessionsReducer from "./sessionsReducer/sessionsReducer";
 
 export default combineReducers({
   swimmers: swimmersReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   user: userReducer,
   users: usersReducer,
   times: timesReducer,
+  sessions: sessionsReducer,
 });

@@ -55,3 +55,13 @@ export const updateTimeAction = (time, id) => ({
   time,
   id,
 });
+
+export const loadSessionsAction = (sessions) => ({
+  type: actionTypes.loadSessions,
+  sessions,
+});
+
+export const loadOneSessionAction = (session) => ({
+  type: actionTypes.loadOneSession,
+  session,
+});
