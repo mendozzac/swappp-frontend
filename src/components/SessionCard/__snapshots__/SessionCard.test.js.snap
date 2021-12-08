@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<li
+  className="session-card"
+>
+  <div
+    className="session-card__element"
+    onClick={[Function]}
+  >
+    <span>
+      10/10/21
+    </span>
+  </div>
+</li>
+`;
+
+exports[`Given a SessionCard component When it receives a session Then it should render a card with the session 1`] = `
+<li
+  className="session-card"
+>
+  <div
+    className="session-card__element"
+    onClick={[Function]}
+  >
+    <span>
+      10/10/21
+    </span>
+  </div>
+</li>
+`;

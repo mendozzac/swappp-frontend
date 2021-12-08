@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import path from "../../path/path";
 import ExerciseCard from "../ExerciseCard/ExerciseCard";
 import Loading from "../Loading/Loading";
+import "./SessionDetail.scss";
 
 const SessionDetail = ({ session }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const SessionDetail = ({ session }) => {
   };
   return session ? (
     <div className="session-data" onClick={onReturn}>
-      <h1 className="title">{session.date}</h1>
+      <h1 className="title title-session">{session.day}</h1>
       <div>
         <ul>
           {session.exercises &&

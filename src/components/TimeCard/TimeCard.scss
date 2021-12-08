@@ -10,3 +10,10 @@
     color: $darkgray;
   }
 }
+
+@media (min-width: 1000px) {
+  .time-box {
+    text-align: center;
+    font-size: 20px;
+  }
+}

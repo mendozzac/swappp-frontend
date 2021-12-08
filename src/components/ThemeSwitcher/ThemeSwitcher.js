@@ -7,9 +7,9 @@ const ThemeSwitcher = () => {
   return (
     <span className="theme-switcher" onClick={toggleMode}>
       {darkMode ? (
-        <img src="/img/sol.png" alt="sol" />
+        <img src="/img/sol.png" alt="sol" width="37px" height="37px" />
       ) : (
-        <img src="/img/luna.png" alt="luna" />
+        <img src="/img/luna.png" alt="luna" width="37px" height="37px" />
       )}
     </span>
   );

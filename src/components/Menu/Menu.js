@@ -40,9 +40,9 @@ const Menu = () => {
                 <li>
                   <Link to="21-22">Entrenamientos</Link>
                 </li>
-                <li>Perfil</li>
+                <li>{isCoach ? "" : "Perfil"}</li>
                 <li>{isCoach ? <Link to="registro">Registro</Link> : ""}</li>
-                <li>Contacto</li>
+                <li>{isAuthenticated ? "" : "Contacto"}</li>
               </>
             ) : (
               <>

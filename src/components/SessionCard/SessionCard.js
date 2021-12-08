@@ -3,7 +3,7 @@ import path from "../../path/path";
 
 const SessionCard = ({ session }) => {
   const navigate = useNavigate();
-  console.log("1", session);
+
   const onSession = (session) => {
     navigate(`${path.season}/${session.id}`);
   };
