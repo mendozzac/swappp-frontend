@@ -1,3 +1,4 @@
+
 import {
   loadOneSwimmerAction,
   updateSwimmerAction,
@@ -30,9 +31,11 @@ describe("Given a oneSwimmerReducer", () => {
 
       const newSwimmer = oneSwimmerReducer({}, action);
 
+
       expect(newSwimmer).toEqual(swimmer);
     });
   });
+
   describe("When it receives an action unexpected and a swimmer", () => {
     test("Then it should return the current swimmer", () => {
       const swimmer = {
@@ -45,6 +48,7 @@ describe("Given a oneSwimmerReducer", () => {
       const newSwimmer = oneSwimmerReducer(swimmer, action);
 
       expect(newSwimmer).toEqual(swimmer);
+
     });
   });
 });
