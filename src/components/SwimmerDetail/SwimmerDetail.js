@@ -29,7 +29,7 @@ const SwimmerDetail = ({ swimmer }) => {
               src={swimmer.image}
               width="140px"
               height="140px"
-              alt={swimmer.name}
+              alt="nadador"
             />
             <div className="swimmer-data__name">
               <p className="name">{swimmer.name}</p>

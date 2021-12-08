@@ -4,7 +4,6 @@ import useSessions from "../../hooks/useSessions";
 
 const SessionsPage = () => {
   const { loadSessions } = useSessions();
-
   useEffect(() => {
     loadSessions();
   }, [loadSessions]);

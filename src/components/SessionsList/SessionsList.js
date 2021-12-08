@@ -4,12 +4,12 @@ import useSessions from "../../hooks/useSessions";
 
 const SessionsList = () => {
   const { sessions } = useSessions();
-
-  return sessions.lenght ? (
+  console.log(sessions);
+  return sessions.length ? (
     <div>
       <h1 className="title">Temporada 21/22</h1>
       <ul className="sessions-list">
-        {sessions.map((session) => (
+        {sessions?.map((session) => (
           <SessionCard session={session} key={session.id} />
         ))}
       </ul>
