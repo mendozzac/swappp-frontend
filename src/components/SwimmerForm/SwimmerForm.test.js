@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import SwimmerForm from "./SwimmerForm";
 import configureStore from "../../redux/store/index";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a SwimmerForm component", () => {
   describe("When it is called", () => {
@@ -9,7 +10,9 @@ describe("Given a SwimmerForm component", () => {
       const store = configureStore();
       render(
         <Provider store={store}>
-          <SwimmerForm />
+          <BrowserRouter>
+            <SwimmerForm />
+          </BrowserRouter>
         </Provider>
       );
       const form = screen.getByLabelText("Nombre");

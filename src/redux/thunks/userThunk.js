@@ -1,5 +1,9 @@
 import axios from "axios";
-import { userLoginAction } from "../actions/actionCreators";
+import {
+  createUserAction,
+  loadUsersAction,
+  userLoginAction,
+} from "../actions/actionCreators";
 import jwDecode from "jwt-decode";
 import path from "../../path/path";
 
@@ -21,4 +25,21 @@ export const loginUserThunk = (user) => async (dispatch) => {
     const error = new Error("Error en la identificación");
     return error;
   }
+};
+
+export const createUserThunk = (user) => {
+  return async (dispatch) => {
+    const { data: newUser } = await axios.post(
+      `${apiUrl}${path.register}`,
+      user
+    );
+    dispatch(createUserAction(newUser));
+  };
+};
+
+export const loadUsersThunk = () => {
+  return async (dispatch) => {
+    const { data: users } = await axios.get(`${apiUrl}${path.register}`);
+    dispatch(loadUsersAction(users));
+  };
 };

@@ -36,6 +36,11 @@
   }
 }
 
+.button-box {
+  @extend %center-total;
+  padding: 10px;
+}
+
 @media (min-width: 600px) and (orientation: landscape) {
   .swimmer-data {
     width: 500px;

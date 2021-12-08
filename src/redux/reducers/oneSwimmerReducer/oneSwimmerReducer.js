@@ -6,6 +6,9 @@ const oneSwimmerReducer = (swimmer = {}, action) => {
     case actionTypes.loadOneSwimmer:
       newSwimmer = { ...action.swimmer };
       break;
+    case actionTypes.updateSwimmer:
+      newSwimmer = { ...action.swimmer };
+      break;
     default:
       newSwimmer = swimmer;
   }

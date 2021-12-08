@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+
+.button-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-edit {
+  margin-top: 0;
+  width: 80px;
+  height: 35px;
+}
+
+.swimmer-data {
+  &__name {
+    display: block;
+    > input {
+      width: 100px;
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      font-size: large;
+      color: $darkgray;
+    }
+  }
+  > input {
+    width: 100px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+    color: $darkgray;
+  }
+}
