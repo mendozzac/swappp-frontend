@@ -1,12 +1,16 @@
-const ExerciseCard =({exercise})=>{
-    return(
-        <li>
-        <div>
-        <span>{exercise.meters}</span>
-        <span>{exercise.description}</span>
-        </div>
-        </li>
-    )
-}
+import "./ExerciseCard.scss";
 
-export default ExerciseCard
+const ExerciseCard = ({ exercise }) => {
+  return (
+    <>
+      <li>
+        <div className="exercise">
+          <span className="meters">{exercise.meters}</span>
+          <span className="description">{exercise.description}</span>
+        </div>
+      </li>
+    </>
+  );
+};
+
+export default ExerciseCard;

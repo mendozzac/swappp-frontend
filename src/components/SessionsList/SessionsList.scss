@@ -1,0 +1,11 @@
+.sessions-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: x-large;
+  margin-left: 25px;
+}
+
+.session-card__element {
+  margin-bottom: 20px;
+  cursor: pointer;
+}

@@ -2,17 +2,12 @@ import actionTypes from "../../actions/actionTypes";
 
 const sessionsReducer = (sessions = [], action) => {
   let newSessions;
-
   switch (action.type) {
     case actionTypes.loadSessions:
       newSessions = [...action.sessions];
       break;
     case actionTypes.loadOneSession:
-      newSessions = sessions.map((session) =>
-        session.id === action.session.id
-          ? { ...session, ...action.session }
-          : session
-      );
+      newSessions = [{ ...action.session }];
       break;
     default:
       newSessions = sessions;

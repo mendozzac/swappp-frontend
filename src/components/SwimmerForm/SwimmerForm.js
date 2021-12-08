@@ -56,7 +56,7 @@ const SwimmerForm = () => {
 
   return (
     <div className="component-form">
-      <h1 className="title">Registro</h1>
+      <h1 className="title">Registro 2/2</h1>
       <div className="form-box">
         <form
           className="register-form"

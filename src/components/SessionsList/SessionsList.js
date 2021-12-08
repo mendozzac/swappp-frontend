@@ -1,10 +1,11 @@
 import Loading from "../Loading/Loading";
 import SessionCard from "../SessionCard/SessionCard";
 import useSessions from "../../hooks/useSessions";
+import "./SessionsList.scss";
 
 const SessionsList = () => {
   const { sessions } = useSessions();
-  console.log(sessions);
+
   return sessions.length ? (
     <div>
       <h1 className="title">Temporada 21/22</h1>

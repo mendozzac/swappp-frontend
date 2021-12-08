@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a TimeCard component When it receives a time Then it should render a card with the time 1`] = `
+<li
+  className="time-box"
+>
+  <div
+    className="time"
+  >
+    <span
+      className="time-element"
+    />
+  </div>
+  <div
+    className="time"
+  >
+    <span
+      className="time-element"
+    />
+  </div>
+  <div
+    className="time"
+  >
+    <span
+      className="time-element"
+    />
+  </div>
+</li>
+`;

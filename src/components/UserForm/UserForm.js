@@ -42,7 +42,7 @@ const UserForm = () => {
 
   return (
     <div className="component-form">
-      <h1 className="title">Registro</h1>
+      <h1 className="title">Registro 1/2</h1>
       <div className="register-box">
         <form
           className="register-form"

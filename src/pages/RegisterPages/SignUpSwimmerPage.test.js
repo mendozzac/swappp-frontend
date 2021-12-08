@@ -2,20 +2,20 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import configureStore from "../../redux/store";
-import SwimmerDetail from "./SwimmerDetail";
+import SignUpSwimmerPage from "./SignUpSwimmerPage";
 
-describe("Given a SwimmerDetail component", () => {
-  describe("When it renders", () => {
-    test("Then it should render an array with a title", () => {
+describe("Given a SignUpSwimmerPage", () => {
+  describe("When it is called", () => {
+    test("Then it should render a form", () => {
       const store = configureStore();
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <SwimmerDetail />
+            <SignUpSwimmerPage />
           </BrowserRouter>
         </Provider>
       );
-      const title = screen.getByText("Cargando...");
+      const title = screen.getByText("Registro 1/2");
 
       expect(title).toBeInTheDocument();
     });

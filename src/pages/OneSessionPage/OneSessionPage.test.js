@@ -1,17 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import configureStore from "../../redux/store";
-import SwimmerDetail from "./SwimmerDetail";
+import configureStore from "../../redux/store/index";
+import OneSessionPage from "./OneSessionPage";
 
-describe("Given a SwimmerDetail component", () => {
-  describe("When it renders", () => {
-    test("Then it should render an array with a title", () => {
+describe("Given a OneSessionPage", () => {
+  describe("When it is called", () => {
+    test("Then it should render a title", () => {
       const store = configureStore();
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <SwimmerDetail />
+            <OneSessionPage />
           </BrowserRouter>
         </Provider>
       );
