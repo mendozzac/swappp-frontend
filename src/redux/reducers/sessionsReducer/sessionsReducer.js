@@ -4,7 +4,7 @@ const sessionsReducer = (sessions = [], action) => {
   let newSessions;
 
   switch (action.type) {
-    case actionTypes.loadSession:
+    case actionTypes.loadSessions:
       newSessions = [...action.sessions];
       break;
     case actionTypes.loadOneSession:

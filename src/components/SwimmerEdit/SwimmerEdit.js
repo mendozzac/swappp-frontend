@@ -62,7 +62,7 @@ const SwimmerEdit = () => {
                 src={swimmer.image}
                 width="140px"
                 height="140px"
-                alt={swimmer.name}
+                alt="nadador"
               />
               <div className="swimmer-data__name">
                 <label htmlFor="name" />

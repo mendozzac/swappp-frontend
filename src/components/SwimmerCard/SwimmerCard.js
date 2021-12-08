@@ -11,12 +11,7 @@ const SwimmerCard = ({ swimmer }) => {
   return (
     <li className="swimmer-card">
       <div className="swimmer-card_element" onClick={() => onSwimmer(swimmer)}>
-        <img
-          src={swimmer.image}
-          alt={swimmer.name}
-          width="140px"
-          height="140px"
-        />
+        <img src={swimmer.image} alt="nadador" width="140px" height="140px" />
         <span>{swimmer.name}</span>
         <span>{swimmer.surname}</span>
       </div>
