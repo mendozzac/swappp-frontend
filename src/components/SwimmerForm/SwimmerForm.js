@@ -1,62 +1,62 @@
 import "./SwimmerForm.scss";
 import { useState } from "react";
 import useSwimmers from "../../hooks/useSwimmers";
+import { useNavigate, useParams } from "react-router";
+import path from "../../path/path";
 
 const SwimmerForm = () => {
   const { createSwimmer } = useSwimmers();
+  const { idUser } = useParams();
+  const navigate = useNavigate();
 
   const initialSwimmerData = {
     name: "",
     surname: "",
-    email: "",
-    username: "",
-    password: "",
+    image: "",
+    user: idUser,
   };
 
-  const [swimmerData, setSwimmerData] = useState(initialSwimmerData);
+  const [formData, setFormData] = useState(initialSwimmerData);
   const [isDisabled, setIsDisabled] = useState(true);
 
   const checkForm = () => {
-    if (
-      swimmerData.name !== "" &&
-      swimmerData.surname !== "" &&
-      swimmerData.email !== "" &&
-      swimmerData.username !== "" &&
-      swimmerData.password !== ""
-    ) {
+    if (formData.name !== "" && formData.surname !== "") {
       setIsDisabled(false);
     }
   };
 
   const changeData = (event) => {
-    setSwimmerData({
-      ...swimmerData,
-      [event.target.id]: event.target.value,
+    setFormData({
+      ...formData,
+      [event.target.id]:
+        event.target.type === "file"
+          ? event.target.files[0]
+          : event.target.value,
     });
+
     checkForm();
   };
 
   const resetForm = () => {
-    setSwimmerData(initialSwimmerData);
+    setFormData(initialSwimmerData);
     setIsDisabled(true);
   };
 
   const onCreateSwimmer = (event) => {
     event.preventDefault();
-    const newSwimmer = {
-      name: swimmerData.name,
-      surname: swimmerData.surname,
-      email: swimmerData.email,
-      username: swimmerData.username,
-      password: swimmerData.password,
-    };
-    createSwimmer(newSwimmer);
+    const newSwimmer = new FormData();
+    newSwimmer.append("name", formData.name);
+    newSwimmer.append("surname", formData.surname);
+    newSwimmer.append("image", formData.photo);
+
+    createSwimmer(idUser, newSwimmer);
     resetForm();
+    navigate(path.swimmers);
   };
 
   return (
-    <>
-      <h1 className="title">Registro</h1>
+    <div className="component-form">
+      <h1 className="title">Registro 2/2</h1>
       <div className="form-box">
         <form
           className="register-form"
@@ -69,7 +69,7 @@ const SwimmerForm = () => {
             <input
               type="text"
               id="name"
-              value={swimmerData.name}
+              value={formData.name}
               onChange={changeData}
             />
           </div>
@@ -78,34 +78,16 @@ const SwimmerForm = () => {
             <input
               type="text"
               id="surname"
-              value={swimmerData.surname}
+              value={formData.surname}
               onChange={changeData}
             />
           </div>
-          <div className="register-form_element">
-            <label htmlFor="email">Email </label>
+          <div className="register-form_element photo">
+            <label htmlFor="photo">Foto </label>
             <input
-              type="email"
-              id="email"
-              value={swimmerData.email}
-              onChange={changeData}
-            />
-          </div>
-          <div className="register-form_element">
-            <label htmlFor="username">Nombre de usuario </label>
-            <input
-              type="text"
-              id="username"
-              value={swimmerData.username}
-              onChange={changeData}
-            />
-          </div>
-          <div className="register-form_element">
-            <label htmlFor="password">Contraseña </label>
-            <input
-              type="password"
-              id="password"
-              value={swimmerData.password}
+              className="photo-element"
+              type="file"
+              id="photo"
               onChange={changeData}
             />
           </div>
@@ -121,7 +103,7 @@ const SwimmerForm = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,7 @@
+@import "../../styles/extends";
+
 .footer {
-  height: 61px;
-  background-color: rgba(249, 246, 246, 1);
-  text-align: center;
-  line-height: 61px;
+  @extend %updown;
   font-size: 14px;
-  color: rgba(115, 115, 115, 1);
+  top: 100vh;
 }

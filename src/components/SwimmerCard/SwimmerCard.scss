@@ -1,11 +1,11 @@
+@import "../../styles/extends";
+
 .swimmer-card {
   width: 140px;
   height: 200px;
-  list-style: none;
   font-size: 21px;
   font-weight: 600;
-  display: flex;
-  justify-content: center;
+  @extend %center;
   cursor: pointer;
   margin: 20px;
   &_element {
@@ -18,4 +18,16 @@
 
 img {
   border-radius: 50%;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .swimmer-card {
+    margin: 35px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .swimmer-card {
+    margin: 50px;
+  }
 }

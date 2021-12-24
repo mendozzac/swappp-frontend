@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a SwimmerCard component When it receives a swimmer Then it should render a card with the swimmer 1`] = `
+<li
+  className="swimmer-card"
+>
+  <div
+    className="swimmer-card_element"
+    onClick={[Function]}
+  >
+    <img
+      alt="nadador"
+      height="140px"
+      width="140px"
+    />
+    <span />
+    <span />
+  </div>
+</li>
+`;

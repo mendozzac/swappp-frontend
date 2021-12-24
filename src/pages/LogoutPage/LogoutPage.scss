@@ -1,0 +1,12 @@
+@import "../../styles/extends";
+
+.logout-box {
+  @extend %center-total;
+  flex-direction: column;
+}
+
+.button {
+  @extend %button-form;
+  background-color: $pink;
+  cursor: pointer;
+}

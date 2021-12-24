@@ -1,0 +1,87 @@
+@import "../../styles/colors";
+@import "../../styles/extends";
+
+.main-header__burger {
+  width: 37px;
+  height: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  left: 0;
+  cursor: pointer;
+  transition: left 0.3s, right 0.3s;
+  & > div {
+    height: 2px;
+    background-color: $gray;
+    border-radius: 15px;
+    transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+}
+
+.active {
+  div {
+    background-color: $lightgray;
+    &:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}
+
+.main-menu-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 100vw;
+  left: -200vw;
+  bottom: 0;
+  background-color: $darkgray;
+  @extend %center-total;
+  transition: left 1s, right 1s;
+  &__active {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $darkgray;
+    color: $color-button;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    @extend %center-total;
+  }
+}
+
+.theme-icon {
+  width: 40px;
+  height: 40px;
+  background-color: $blue;
+  @extend %center-total;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 5.5%;
+  top: 15px;
+}
+
+.theme-switcher {
+  position: inherit;
+  top: 0;
+}
+
+.main-menu {
+  left: -100vw;
+  width: 50vw;
+  height: 70vh;
+  @extend %center;
+  a {
+    text-decoration: none;
+    color: $color-button;
+  }
+}

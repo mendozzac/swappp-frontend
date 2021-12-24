@@ -1,7 +1,47 @@
+@import "./styles/colors";
+@import "./styles/extends";
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.dark {
+  background-color: $darkgray;
+  color: $updown;
+  .title {
+    color: $lightgray;
+  }
+  .header {
+    background-color: $gray;
+    .isotipo {
+      a {
+        color: $updown;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $gray;
+    color: $updown;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.out-box {
+  width: 100vw;
+  @extend %center;
+  min-height: calc(100vh - 136px);
+}
+
+.inside-box {
+  width: 360px;
+  @extend %center;
 }
 
 ul {
@@ -10,5 +50,21 @@ ul {
 
 .title {
   text-align: center;
-  color: rgba(70, 70, 70, 1);
+  color: $darkgray;
+}
+
+li {
+  list-style: none;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .inside-box {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .inside-box {
+    width: 1000px;
+  }
 }

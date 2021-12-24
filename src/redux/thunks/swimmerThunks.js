@@ -4,6 +4,8 @@ import {
   createSwimmerAction,
   deleteSwimmerAction,
   loadSwimmersAction,
+  loadOneSwimmerAction,
+  updateSwimmerAction,
 } from "../actions/actionCreators";
 
 const apiUrl = process.env.REACT_APP_API_URL;
@@ -15,21 +17,40 @@ export const loadSwimmersThunk = () => {
   };
 };
 
-export const createSwimmerThunk = (swimmer) => {
+export const createSwimmerThunk = (id, swimmer) => {
   return async (dispatch) => {
     const { data: newSwimmer } = await axios.post(
-      `${apiUrl}${path.register}`,
+      `${apiUrl}${path.register}/${id}`,
       swimmer
     );
     dispatch(createSwimmerAction(newSwimmer));
   };
 };
 
-export const deleteSwimmerThunk = (id) => {
+export const deleteSwimmerThunk = (idSwimmer) => {
   return async (dispatch) => {
-    const { status } = await axios.delete(`${apiUrl}${id}`);
+    const { status } = await axios.delete(
+      `${apiUrl}${path.swimmers}/${idSwimmer}`
+    );
     if (status === 200) {
-      dispatch(deleteSwimmerAction(id));
+      dispatch(deleteSwimmerAction(idSwimmer));
     }
   };
+};
+
+export const loadOneSwimmerThunk = (idSwimmer) => {
+  return async (dispatch) => {
+    const { data: swimmer } = await axios.get(
+      `${apiUrl}${path.swimmers}/${idSwimmer}`
+    );
+    dispatch(loadOneSwimmerAction(swimmer));
+  };
+};
+
+export const updateSwimmerThunk = (swimmer) => async (dispatch) => {
+  const { data: newSwimmer } = await axios.put(
+    `${apiUrl}${path.swimmers}/${swimmer.id}`,
+    swimmer
+  );
+  dispatch(updateSwimmerAction(newSwimmer));
 };
