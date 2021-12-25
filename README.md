@@ -1,24 +1,21 @@
-# SwimCard
+# Swappp
 
-Recibe la información de un nadador
-Renderiza una tarjeta con toda la información del nadador
+Aplicación que pretende ser una herramienta de comunicación para un equipo de natación, en la que el cuerpo técnico pone a disposición de sus nadadores la información de la temporada y los nadadores tienen acceso a una ficha personalizada con sus datos y marcas.
 
-# Listado de Nadadores
+El diseño es sencillo, parece simple, pero esconde un manejo más complejo de datos y el uso de múltiples tecnologías.
 
-Recibe un listado SwimCards
-Renderiza el listado de SwimCards
+En el backend ([aquí](https://github.com/mendozzac/swappp-backend)), una API Rest desarrollada con Node js y Express, con deploy en Heroku y como base de datos Mongo DB y Firebase para almacenar archivos.
 
-# Sesión de entrenamiento
+En el frontend, el desarrollo se lleva a cabo con React y Redux, para los estilos se usa Sass y el deploy en Netlify, siempre con CI/CD.
 
-Recibe información de un entrenamiento
-Renderiza la información recibida
+Todo ello testeado con Jest y la testing-library.
 
-# Registro
+Durante el desarrollo se usa Git y GitHub como control de versiones, así como Eslint, Prettier, GitHub actions y Husky para evitar errores. También se revisa Sonarqube, Lighthouse y Coverage.
 
-Renderiza un formulario y un botón
-Envía la información recogida en los campos
+Llevado a cabo en entorno AGILE, siguiendo los principios SOLID, DRY, KISS, diseño en Figma y organización con Trello.
 
-# Login
+Espero que les guste. ([the-swappp](https://the-swappp.netlify.app/))
 
-Renderiza un formulario y un botón
-Envía la información recogida en los campos
+#Login
+username: nadador
+password: 123
