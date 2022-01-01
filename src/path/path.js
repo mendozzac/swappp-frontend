@@ -1,8 +1,7 @@
 const path = {
   home: "/",
   register: "/registro",
-  registerUser: "/registro/usuario",
-  newSwimmer: "/registro/:idUser",
+  newSwimmer: "/registro/nadador",
   swimmers: "/nadadores",
   oneSwimmer: "/nadadores/:idSwimmer",
   edit: "/nadadores/edit/:idSwimmer",

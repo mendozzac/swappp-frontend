@@ -1,19 +1,19 @@
 import "./SwimmerForm.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSwimmers from "../../hooks/useSwimmers";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 import path from "../../path/path";
+import useUser from "../../hooks/useUser";
 
 const SwimmerForm = () => {
   const { createSwimmer } = useSwimmers();
-  const { idUser } = useParams();
   const navigate = useNavigate();
 
   const initialSwimmerData = {
     name: "",
     surname: "",
     image: "",
-    user: idUser,
+    user: "",
   };
 
   const [formData, setFormData] = useState(initialSwimmerData);
@@ -41,6 +41,15 @@ const SwimmerForm = () => {
     setFormData(initialSwimmerData);
     setIsDisabled(true);
   };
+
+  const { loadUsers, users } = useUser();
+
+  useEffect(() => {
+    loadUsers();
+  }, [loadUsers]);
+
+  const newUser = users[users.length - 1];
+  const idUser = newUser.id;
 
   const onCreateSwimmer = (event) => {
     event.preventDefault();
