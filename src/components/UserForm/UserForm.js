@@ -37,7 +37,7 @@ const UserForm = () => {
       isCoach: false,
     };
     createUser(newUser);
-    navigate(path.registerUser);
+    navigate(path.newSwimmer);
   };
 
   return (
