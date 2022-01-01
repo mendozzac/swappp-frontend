@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import useSwimmer from "../../hooks/useSwimmer";
 import useSwimmers from "../../hooks/useSwimmers";
+import useUser from "../../hooks/useUser";
 import path from "../../path/path";
 import "./SwimmerEdit.scss";
 
 const SwimmerEdit = () => {
   const { updateSwimmer, swimmer } = useSwimmer();
   const { deleteSwimmer } = useSwimmers();
+  const { deleteUser } = useUser();
 
   const navigate = useNavigate();
 
@@ -18,6 +20,8 @@ const SwimmerEdit = () => {
     weight: swimmer.weight || "",
   };
   const idSwimmer = swimmer.id;
+  const idUser = swimmer.user;
+
   const [swimmerData, setSwimmerData] = useState(initialSwimmerData);
 
   const changeData = (event) => {
@@ -43,6 +47,7 @@ const SwimmerEdit = () => {
   const onDelete = (event) => {
     event.preventDefault();
     deleteSwimmer(idSwimmer);
+    deleteUser(idUser);
     navigate(path.swimmers);
   };
 

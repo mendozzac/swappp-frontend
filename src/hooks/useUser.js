@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../redux/actions/actionCreators";
 import {
   createUserThunk,
+  deleteUserThunk,
   loadUsersThunk,
   loginUserThunk,
 } from "../redux/thunks/userThunk";
@@ -30,6 +31,10 @@ const useUser = () => {
     dispatch(loadUsersThunk());
   }, [dispatch]);
 
+  const deleteUser = (idUser) => {
+    dispatch(deleteUserThunk(idUser));
+  };
+
   return {
     user,
     users,
@@ -37,6 +42,7 @@ const useUser = () => {
     logoutUser,
     createUser,
     loadUsers,
+    deleteUser,
   };
 };
 
