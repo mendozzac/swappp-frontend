@@ -10,6 +10,7 @@ const actionTypes = {
   loginUser: "loginUser",
   logoutUser: "logoutUser",
   loadUsers: "loadUsers",
+  deleteUser: "deleteUser",
   createTime: "createTime",
   updateTime: "updateTime",
 };

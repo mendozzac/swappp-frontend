@@ -7,6 +7,9 @@ const usersReducer = (users = [], action) => {
     case actionTypes.loadUsers:
       newUsers = [...action.users];
       break;
+    case actionTypes.deleteUser:
+      newUsers = users.filter((user) => user.id !== action.id);
+      break;
     default:
       newUsers = users;
   }

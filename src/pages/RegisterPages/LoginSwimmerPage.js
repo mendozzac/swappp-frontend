@@ -3,13 +3,13 @@ import LoginSwimmer from "../../components/LoginSwimmer/LoginSwimmer";
 import useUser from "../../hooks/useUser";
 
 const LoginSwimmerPage = () => {
-  const { loadUsers } = useUser();
+  const { loadUsers, users } = useUser();
 
   useEffect(() => {
     loadUsers();
   }, [loadUsers]);
 
-  return <LoginSwimmer />;
+  return users && <LoginSwimmer />;
 };
 
 export default LoginSwimmerPage;
