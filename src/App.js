@@ -16,7 +16,6 @@ import OneSwimmerPage from "./pages/OneSwimmerPage/OneSwimmerPage";
 import ThemeContext from "./contexts/ThemeContext";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpSwimmerPage from "./pages/RegisterPages/SignUpSwimmerPage";
-import LoginSwimmerPage from "./pages/RegisterPages/LoginSwimmerPage";
 import RegisterSwimmerPage from "./pages/RegisterPages/RegisterSwimmerPage";
 import SwimmerEditPage from "./pages/SwimmerEditPage/SwimmerEditPage";
 import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute";
@@ -60,20 +59,11 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-
               <Route
                 path={path.register}
                 element={
                   <ProtectedRoute>
                     <SignUpSwimmerPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path={path.registerUser}
-                element={
-                  <ProtectedRoute>
-                    <LoginSwimmerPage />
                   </ProtectedRoute>
                 }
               />

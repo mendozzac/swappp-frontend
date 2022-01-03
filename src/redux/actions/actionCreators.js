@@ -45,11 +45,6 @@ export const loadUsersAction = (users) => ({
   users,
 });
 
-export const deleteUserAction = (id) => ({
-  type: actionTypes.deleteUser,
-  id,
-});
-
 export const createTimeAction = (time) => ({
   type: actionTypes.createTime,
   time,

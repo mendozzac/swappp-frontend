@@ -1,7 +1,6 @@
 import axios from "axios";
 import {
   createUserAction,
-  deleteUserAction,
   loadUsersAction,
   userLoginAction,
 } from "../actions/actionCreators";
@@ -43,13 +42,4 @@ export const loadUsersThunk = () => {
     const { data: users } = await axios.get(`${apiUrl}${path.register}`);
     dispatch(loadUsersAction(users));
   };
-};
-
-export const deleteUserThunk = (idUser) => async (dispatch) => {
-  const { status } = await axios.delete(
-    `${apiUrl}${path.oneSwimmer}/${idUser}`
-  );
-  if (status === 200) {
-    dispatch(deleteUserAction(idUser));
-  }
 };
