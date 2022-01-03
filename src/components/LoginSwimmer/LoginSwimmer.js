@@ -10,9 +10,7 @@ const LoginSwimmer = () => {
 
   const newUser = users[users.length - 1];
   useEffect(() => {
-    newUser
-      ? navigate(`${path.register}/${newUser.id}`)
-      : navigate(path.registerUser);
+    newUser ? navigate(`${path.register}/${newUser.id}`) : <Loading />;
   }, [navigate, newUser]);
 
   return <Loading />;
